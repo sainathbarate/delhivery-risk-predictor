@@ -13,9 +13,7 @@ model_columns = joblib.load('model_columns.pkl')
 st.markdown("""
     <style>
 
-    /* =========================
-       PREDICT BUTTON
-       ========================= */
+    /* PREDICT BUTTON */
     div.stButton > button {
         background-color: #FF3D3D !important;
         color: black !important;
@@ -32,35 +30,30 @@ st.markdown("""
     }
 
 
-    /* =========================
-       DROPDOWN
-       ========================= */
-
-    /* Entire dropdown container */
-    div[data-baseweb="select"] > div {
+    /* SELECTBOX MAIN AREA */
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] {
         background-color: #000000 !important;
-        border-radius: 6px !important;
     }
 
-    /* Dropdown inner area */
-    div[data-baseweb="select"] div {
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] div {
         background-color: #000000 !important;
         color: white !important;
     }
 
-    /* Dropdown selected text */
-    div[data-baseweb="select"] input {
+    /* SELECTBOX OPEN BUTTON - THIS IS THE WHITE BLOCK */
+    div[data-testid="stSelectbox"] button[role="combobox"] {
         background-color: #000000 !important;
         color: white !important;
+        border: none !important;
     }
 
-    /* Dropdown arrow area */
-    div[data-baseweb="select"] svg {
+    /* SELECTBOX ARROW */
+    div[data-testid="stSelectbox"] button[role="combobox"] svg {
         fill: white !important;
         color: white !important;
     }
 
-    /* Dropdown options */
+    /* DROPDOWN OPTIONS */
     li[role="option"] {
         color: white !important;
         background-color: #000000 !important;
@@ -72,49 +65,31 @@ st.markdown("""
     }
 
 
-    /* =========================
-       NUMBER INPUT
-       ========================= */
-
-    /* Entire number input wrapper */
+    /* NUMBER INPUT */
     div[data-testid="stNumberInput"] > div {
         background-color: #000000 !important;
         border-radius: 6px !important;
     }
 
-    /* Number input field */
     div[data-testid="stNumberInput"] input {
         background-color: #000000 !important;
         color: white !important;
         border-radius: 6px 0 0 6px !important;
     }
 
-    /* Minus and plus buttons */
-    div[data-testid="stNumberInput"] button[data-testid="stNumberInputStepDown"],
-    div[data-testid="stNumberInput"] button[data-testid="stNumberInputStepUp"] {
+    div[data-testid="stNumberInput"] button {
         background-color: #000000 !important;
         color: white !important;
         border: none !important;
     }
 
-    /* Minus and plus icons */
-    div[data-testid="stNumberInput"] button[data-testid="stNumberInputStepDown"] svg,
-    div[data-testid="stNumberInput"] button[data-testid="stNumberInputStepUp"] svg {
+    div[data-testid="stNumberInput"] button svg {
         fill: white !important;
         color: white !important;
     }
 
-    /* Remove white background from number-input button containers */
-    div[data-testid="stNumberInput"] button {
-        background-color: #000000 !important;
-        color: white !important;
-    }
 
-
-    /* =========================
-       GENERAL INPUT
-       ========================= */
-
+    /* GENERAL INPUT */
     input {
         background-color: #000000 !important;
         color: white !important;
@@ -122,21 +97,9 @@ st.markdown("""
     }
 
 
-    /* =========================
-       METRICS
-       ========================= */
-
+    /* METRICS */
     [data-testid="stMetricValue"] {
         color: white !important;
-    }
-
-
-    /* =========================
-       SVG ICONS
-       ========================= */
-
-    svg {
-        fill: white !important;
     }
 
     </style>
