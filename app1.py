@@ -12,62 +12,133 @@ model_columns = joblib.load('model_columns.pkl')
 # Custom CSS for black/white/red theme
 st.markdown("""
     <style>
+
+    /* =========================
+       PREDICT BUTTON
+       ========================= */
     div.stButton > button {
-        background-color: #FF3D3D;
-        color: black;
+        background-color: #FF3D3D !important;
+        color: black !important;
         font-size: 20px;
         font-weight: 700;
         padding: 12px 40px;
         border-radius: 8px;
         border: none;
     }
+
     div.stButton > button:hover {
-        background-color: #E62E2E;
-        color: black;
+        background-color: #E62E2E !important;
+        color: black !important;
     }
 
-    /* Dropdown: force every element AND the container itself black */
-    div[data-baseweb="select"],
-    div[data-baseweb="select"] *,
-    div[data-baseweb="select"] div,
-    div[data-baseweb="select"] span {
+
+    /* =========================
+       DROPDOWN
+       ========================= */
+
+    /* Entire dropdown container */
+    div[data-baseweb="select"] > div {
+        background-color: #000000 !important;
+        border-radius: 6px !important;
+    }
+
+    /* Dropdown inner area */
+    div[data-baseweb="select"] div {
         background-color: #000000 !important;
         color: white !important;
     }
 
-    /* Number input: the whole wrapping container */
-    div[data-baseweb="base-input"],
-    div[data-baseweb="base-input"] * {
+    /* Dropdown selected text */
+    div[data-baseweb="select"] input {
         background-color: #000000 !important;
         color: white !important;
     }
 
-    /* Number input step buttons are actual <button> elements */
-    button[data-testid="stNumberInputStepDown"],
-    button[data-testid="stNumberInputStepUp"] {
+    /* Dropdown arrow area */
+    div[data-baseweb="select"] svg {
+        fill: white !important;
+        color: white !important;
+    }
+
+    /* Dropdown options */
+    li[role="option"] {
+        color: white !important;
         background-color: #000000 !important;
+    }
+
+    li[role="option"]:hover {
+        background-color: #222222 !important;
+        color: white !important;
+    }
+
+
+    /* =========================
+       NUMBER INPUT
+       ========================= */
+
+    /* Entire number input wrapper */
+    div[data-testid="stNumberInput"] > div {
+        background-color: #000000 !important;
+        border-radius: 6px !important;
+    }
+
+    /* Number input field */
+    div[data-testid="stNumberInput"] input {
+        background-color: #000000 !important;
+        color: white !important;
+        border-radius: 6px 0 0 6px !important;
+    }
+
+    /* Minus and plus buttons */
+    div[data-testid="stNumberInput"] button[data-testid="stNumberInputStepDown"],
+    div[data-testid="stNumberInput"] button[data-testid="stNumberInputStepUp"] {
+        background-color: #000000 !important;
+        color: white !important;
         border: none !important;
     }
+
+    /* Minus and plus icons */
+    div[data-testid="stNumberInput"] button[data-testid="stNumberInputStepDown"] svg,
+    div[data-testid="stNumberInput"] button[data-testid="stNumberInputStepUp"] svg {
+        fill: white !important;
+        color: white !important;
+    }
+
+    /* Remove white background from number-input button containers */
+    div[data-testid="stNumberInput"] button {
+        background-color: #000000 !important;
+        color: white !important;
+    }
+
+
+    /* =========================
+       GENERAL INPUT
+       ========================= */
 
     input {
         background-color: #000000 !important;
         color: white !important;
         border-radius: 6px;
     }
-    li[role="option"] {
-        color: white !important;
-        background-color: #000000 !important;
-    }
+
+
+    /* =========================
+       METRICS
+       ========================= */
+
     [data-testid="stMetricValue"] {
         color: white !important;
     }
+
+
+    /* =========================
+       SVG ICONS
+       ========================= */
+
     svg {
         fill: white !important;
     }
-    button[data-testid="stNumberInputStepDown"] svg,
-    button[data-testid="stNumberInputStepUp"] svg {
-        fill: black !important;
-    }
+
     </style>
 """, unsafe_allow_html=True)
 
