@@ -25,10 +25,30 @@ st.markdown("""
         background-color: #E62E2E;
         color: black;
     }
-    div[data-baseweb="select"] div {
+
+    /* Dropdown: force every element AND the container itself black */
+    div[data-baseweb="select"],
+    div[data-baseweb="select"] *,
+    div[data-baseweb="select"] div,
+    div[data-baseweb="select"] span {
         background-color: #000000 !important;
         color: white !important;
     }
+
+    /* Number input: the whole wrapping container */
+    div[data-baseweb="base-input"],
+    div[data-baseweb="base-input"] * {
+        background-color: #000000 !important;
+        color: white !important;
+    }
+
+    /* Number input step buttons are actual <button> elements */
+    button[data-testid="stNumberInputStepDown"],
+    button[data-testid="stNumberInputStepUp"] {
+        background-color: #000000 !important;
+        border: none !important;
+    }
+
     input {
         background-color: #000000 !important;
         color: white !important;
